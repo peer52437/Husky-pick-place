@@ -1,0 +1,23 @@
+rosrun tf static_transform_publisher 0 0 0 0 0 0 /map /world 100
+
+rosrun topic_tools relay camera/scan scan
+
+
+rostopic b move_base_simple/goal geometry_msgs/PoseStamped "header:
+
+rosrun tf tf_echo /map /base_footprint
+
+rosrun tf tf_echo /ur5_arm_base_link /ur5_arm_tool0
+
+pickup/place tf arm:
+
+- Translation: [0.161, 0.366, 0.815]
+- Rotation: in Quaternion [-0.569, -0.445, -0.475, 0.502]
+            in RPY (radian) [-1.856, -1.415, 0.188]
+            in RPY (degree) [-106.336, -81.050, 10.748]
+
+
+
+
+    <arg name="map_file" default="$(find husky_navigation)/maps/playpen_map.yaml"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="paused" default="false"/>
+  <arg name="gui" default="true"/>
+
+  <!-- startup simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" default="worlds/empty.world"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+
+<group ns="follow_joint_trajectory">
+  <include file="$(find por)/launch/UR5.launch"/>
+  </group> 
+
+  <group ns="turtle">
+  <include file="$(find por)/launch/turtle.launch"/>
+  </group> 
+
+</launch>
