@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+#This code was written for POR/ROS lvl 3 for the minor Adaptive Robotics by Fontys University of Applied Sciences in Eindhoven, The Netherlands.
+#This code will start a menu where the operator can input a specific location or make the robot loop through the locations.
+#These locations are changed using the parameters in this code.
+#When the robot has arrived at the location, the UR5 arm will be extended to simulate a pickup. The angles of the joints can also be changed in the pos1_ur5.py file.
+
 import sys
 import copy
 import rospy
