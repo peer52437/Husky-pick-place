@@ -4,8 +4,14 @@ This is the repository for the project Husky Pick and Place, made specifically f
 ## Goals:
 The goal of this project was to demonstrate the knowledge the project members gained during the minor in POR and ROS. 
 The members of this project have done this using a combination of a Husky Robot, by [Clearpath Robotics](https://www.clearpathrobotics.com/husky-unmanned-ground-vehicle-robot/) and an UR5 robotic arm, by [Universal Robotics](https://www.universal-robots.com/).
-The Husky is placed in a simulated environment with an UR5 as manipulator, and SICK laser scanner for navigation. These two accesories can be turned on and off in the launch file por_lvl3. Unfortunately the URDF is originally not built to enable the user to use two different accesories at the same time. This meant that the UR5 and the laser scanner were inside of one another.
+The goal is for the Husky to drive to point A, pick up a object, drive to point B and place the object. This will be done in a simulated environment. The manipulator used is the UR5 and a SICK laser scanner is ued for navigation.
+These two accesories can be turned on and off in the launch file por_lvl3. Unfortunately the URDF is originally not built to enable the user to use two different accesories at the same time. This meant that the UR5 and the laser scanner were inside of one another.
 To enable the husky to use the UR5 and the laser scanner at the same time, the urdf file is edited.
 
 ## The Process
 The process is described in our [wiki](https://github.com/peer52437/Husky-pick-place/wiki), with a step-by-step guide to achieving the same result.
+
+## The Simulation
+The pick and place project was simulated in gazebo and RViz. In the simulation the Husky picks up a object from a dumpster and then places that object on another dumpster.
+A video of the simulation can be found here:
+https://youtu.be/P1JF098UJJg
