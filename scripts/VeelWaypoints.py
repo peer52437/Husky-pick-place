@@ -68,7 +68,7 @@ class map_navigation():
             	self.goalReached = self.moveToGoal(self.xStart, self.yStart, self.zStart, self.wStart)
 		if (self.goalReached):
                 	rospy.loginfo("Stowing ur5")
-			os.system('rosrun husky_control stow_ur5')
+			os.system('rosrun por stow_ur5')
 
 
         elif (choice == 1):
@@ -76,7 +76,7 @@ class map_navigation():
 	        self.goalReached = self.moveToGoal(self.xWaypoint_1, self.yWaypoint_1, self.zWaypoint_1, self.wWaypoint_1)
 		if (self.goalReached):
                 	rospy.loginfo("Grabbing stuff")
-			os.system('rosrun husky_control pos1_ur5')
+			os.system('rosrun por pos1_ur5')
 			rospy.loginfo("Stowing ur5")
 
 
@@ -86,7 +86,7 @@ class map_navigation():
             	self.goalReached = self.moveToGoal(self.xWaypoint_2, self.yWaypoint_2, self.zWaypoint_2, self.wWaypoint_2)
 		if (self.goalReached):
 			rospy.loginfo("Grabbing stuff")
-			os.system('rosrun husky_control pos1_ur5')
+			os.system('rosrun por pos1_ur5')
                 	rospy.loginfo("Stowing ur5")
 
 
@@ -112,7 +112,7 @@ class map_navigation():
 
             if (self.goalReached):
 		rospy.loginfo("Grabbing stuff")
-		os.system('rosrun husky_control pos1_ur5')
+		os.system('rosrun por pos1_ur5')
                 rospy.loginfo("Stowing ur5")
                 # rospy.spin()
 
@@ -129,7 +129,7 @@ class map_navigation():
 
             if (self.goalReached):
 		rospy.loginfo("Grabbing stuff")
-		os.system('rosrun husky_control pos1_ur5')
+		os.system('rosrun por pos1_ur5')
                 rospy.loginfo("Stowing ur5")
 
                 # rospy.spin()
@@ -156,7 +156,7 @@ class map_navigation():
                                                    self.wWaypoint_1)
 		if (self.goalReached):
                 	rospy.loginfo("Grabbing stuff")
-			os.system('rosrun husky_control pos1_ur5')
+			os.system('rosrun por pos1_ur5')
 			rospy.loginfo("Stowing ur5")
 
 
@@ -166,7 +166,7 @@ class map_navigation():
                                                    self.wWaypoint_2)
 		if (self.goalReached):
 			rospy.loginfo("Grabbing stuff")
-			os.system('rosrun husky_control pos1_ur5')
+			os.system('rosrun por pos1_ur5')
                 	rospy.loginfo("Stowing ur5")
 
 												   
@@ -193,7 +193,7 @@ class map_navigation():
 
                 if (self.goalReached):
 			rospy.loginfo("Grabbing stuff")
-			os.system('rosrun husky_control pos1_ur5')
+			os.system('rosrun por pos1_ur5')
                  	rospy.loginfo("Stowing ur5")
 
                     # rospy.spin()
@@ -212,7 +212,7 @@ class map_navigation():
 
                 if (self.goalReached):
 			rospy.loginfo("Grabbing stuff")
-			os.system('rosrun husky_control pos1_ur5')
+			os.system('rosrun por pos1_ur5')
                     	rospy.loginfo("Stowing ur5")
 
                     # rospy.spin()
