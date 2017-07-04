@@ -1,5 +1,5 @@
 # Husky-pick-place
-This is the repository for the project Husky Pick and Place, made specifically for the minor Adaptive Robotics (AR) to gain levels in Principles of Robotics (POR) and the Robot Operating System (ROS) classes on Fontys University of Applied Sciences in Eindhoven, the Netherlands.
+This is the repository for the project Husky Pick and Place, made specifically for the minor Adaptive Robotics (AR) to gain levels in Principles of Robotics (POR) and the Robot Operating System (ROS) classes on Fontys University of Applied Sciences in Eindhoven, the Netherlands. This project is experimental in nature and further updates to the system will not be made.
 
 ## Goals:
 The goal of this project was to demonstrate the knowledge the project members gained during the minor in POR and ROS. 
