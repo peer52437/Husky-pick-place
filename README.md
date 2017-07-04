@@ -15,3 +15,5 @@ The process is described in our [wiki](https://github.com/peer52437/Husky-pick-p
 The pick and place project was simulated in gazebo and RViz. In the simulation the Husky picks up a object from a dumpster and then places that object on another dumpster.
 A video of the simulation can be found here:
 https://youtu.be/P1JF098UJJg
+Every time a command is given, the coordinates of the next waypoint is sent to the move_base node. This triggers the path planning (Dijkstra's algorithm) to calculate a path towards it.
+When the waypoint has been reached, the next python script is triggered, which sends the angles of each joint to the moveit controller so it can calculate the path towards that point.
