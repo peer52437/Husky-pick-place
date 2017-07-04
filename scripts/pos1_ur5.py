@@ -8,9 +8,9 @@ from trajectory_msgs.msg import *
 JOINT_NAMES = ['ur5_arm_shoulder_pan_joint', 'ur5_arm_shoulder_lift_joint', 'ur5_arm_elbow_joint',
                'ur5_arm_wrist_1_joint', 'ur5_arm_wrist_2_joint', 'ur5_arm_wrist_3_joint']
 
-Q1 = [-2.962,-0.611,-0.369,0.977,1.392,-0.185]
-Q2 = [-2.962,-0.611,-0.369,0.977,1.392,-0.185]
-Q3 = [-2.962,-0.611,-0.369,0.977,1.392,-0.185]
+Q1 = [-0,-0.611,-0.369,0.977,1.392,-0.185]
+Q2 = [-1.57,-1.57,0,-1.57,0,0]
+Q3 = [-1.57,-0.1745,-2.79,-1.57,0,0]
 
 client = None
 
