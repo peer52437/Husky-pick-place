@@ -17,3 +17,6 @@ A video of the simulation can be found here:
 https://youtu.be/P1JF098UJJg
 Every time a command is given, the coordinates of the next waypoint is sent to the move_base node. This triggers the path planning (Dijkstra's algorithm) to calculate a path towards it.
 When the waypoint has been reached, the next python script is triggered, which sends the angles of each joint to the moveit controller so it can calculate the path towards that point.
+
+An additional simulation was made were the environment. In this simulation a box was placed in the path of the Husky. The Husky tried to find a path but was unable to. so changing the environment (without saving the changes in the map) is not possible.
+https://youtu.be/ecWTlAxEkDU
