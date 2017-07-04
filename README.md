@@ -18,5 +18,22 @@ https://youtu.be/P1JF098UJJg
 Every time a command is given, the coordinates of the next waypoint is sent to the move_base node. This triggers the path planning (Dijkstra's algorithm) to calculate a path towards it.
 When the waypoint has been reached, the next python script is triggered, which sends the angles of each joint to the moveit controller so it can calculate the path towards that point.
 
-An additional simulation was made were the environment. In this simulation a box was placed in the path of the Husky. The Husky tried to find a path but was unable to. so changing the environment (without saving the changes in the map) is not possible.
+## Updating Simulated Environment
+An additional simulation was made where the environment was changed. In this simulation a box was placed in the path of the Husky. The Husky tried to find a path but was unable to. so changing the environment (without saving the changes in the map) is not possible.
+To be able to have a working simulation with changing environment the navigation xml has to be changed to incorporate the current sensor data so the path planning algorithm can be updated.
 https://youtu.be/ecWTlAxEkDU
+
+## MoveIt problems
+In the current simulation, MoveIt is not used to plan the movements of the UR5 arm. We have incorporated moveit into the RViz environment and can use the interactive markers to plan movements in RViz and execute them, also visualizing this in Gazebo.
+FILMPJE
+We have tried using a script to have the UR5 arm move to coordinates, but the kinematic solver of MoveIt would not instatiate, giving this error message:
+
+    Kin chain provided in model doesn't contain standard UR joint 'shoulder_lift_joint'.
+    Kinematics solver of type 'ur_kinematics/UR5KinematicsPlugin' could not be initialized for group 'ur5_arm'
+    Kinematics solver could not be instantiated for joint group ur5_arm.
+    Ready to take MoveGroup commands for group ur5_arm.
+    Replanning: yes
+    Fail: ABORTED: No motion plan found. No execution attempted.
+This meant that the kinematic Solver didn't work for an unknown reason. After some searching on the web, we found that a different kinematic solver had to be used for the UR5, it's called TRAC_IKKinematicsPlugin.
+By changing the Kinematics.yaml file to incorporate the new kinematic solver, we solved the errors above.
+The next error we encountered was that the solver could not find a path. This is caused by MoveIt which tries to find a path within a certain time. If it can't plot a path in this time it will give this error. To solve this error, smaller steps have to be taken to stay within the timeslot.
