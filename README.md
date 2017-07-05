@@ -25,7 +25,6 @@ https://youtu.be/ecWTlAxEkDU
 
 ## MoveIt problems
 In the current simulation, MoveIt is not used to plan the movements of the UR5 arm. We have incorporated moveit into the RViz environment and can use the interactive markers to plan movements in RViz and execute them, also visualizing this in Gazebo.
-FILMPJE
 We have tried using a script to have the UR5 arm move to coordinates, but the kinematic solver of MoveIt would not instatiate, giving this error message:
 
     Kin chain provided in model doesn't contain standard UR joint 'shoulder_lift_joint'.
@@ -36,4 +35,10 @@ We have tried using a script to have the UR5 arm move to coordinates, but the ki
     Fail: ABORTED: No motion plan found. No execution attempted.
 This meant that the kinematic Solver didn't work for an unknown reason. After some searching on the web, we found that a different kinematic solver had to be used for the UR5, it's called TRAC_IKKinematicsPlugin.
 By changing the Kinematics.yaml file to incorporate the new kinematic solver, we solved the errors above.
-The next error we encountered was that the solver could not find a path. This is caused by MoveIt which tries to find a path within a certain time. If it can't plot a path in this time it will give this error. To solve this error, smaller steps have to be taken to stay within the timeslot.
+The next error we encountered was that the solver could not find a path. This is caused by MoveIt which tries to find a path within a certain time. If it can't plot a path in this time it will give this error. To solve this error, smaller steps have to be taken to stay within the timeslot. 
+After solving this a frame was also placed in RViz with a transformation from the base_link of the husky. This frame represents a possible object to pick and place.
+A video with moveit and the object frame can be found here:
+https://youtu.be/sDt0YGg1weY
+
+This program with moveit was then used in the program of VeelWaypoints.py. So in this simulation the robot drives to the waypoints and simulates picking and placing an object. A video was also made of this simulation.
+https://youtu.be/95B99MdWNBs
