@@ -113,10 +113,10 @@ def move_group_python_interface_tutorial():
   ## end-effector
   print "============ Generating plan 1"
   pose_target = geometry_msgs.msg.Pose()
-  pose_target.orientation.w = -0.064
-  pose_target.position.x = 0.191
-  pose_target.position.y = 0.061
-  pose_target.position.z = 0.704
+  pose_target.orientation.w = -0.015
+  pose_target.position.x = 0.006
+  pose_target.position.y = 0.486
+  pose_target.position.z = 0.637
   group.set_pose_target(pose_target)
 
   ## Now, we call the planner to compute the plan
@@ -157,6 +157,37 @@ def move_group_python_interface_tutorial():
   # Uncomment below line when working with a real robot
   group.go(wait=True)
 
+  # go to location of object
+  print "============ Generating plan 2"
+  pose_target = geometry_msgs.msg.Pose()
+  pose_target.orientation.w = 1
+  pose_target.position.x = 0.2
+  pose_target.position.y = 0.5
+  pose_target.position.z = 0.11
+  group.set_pose_target(pose_target)
+
+  plan2 = group.plan()
+
+  print "============ Waiting while RVIZ displays plan2..."
+  rospy.sleep(5)
+
+  print "============ Visualizing plan2"
+  display_trajectory = moveit_msgs.msg.DisplayTrajectory()
+
+  display_trajectory.trajectory_start = robot.get_current_state()
+  display_trajectory.trajectory.append(plan2)
+  display_trajectory_publisher.publish(display_trajectory);
+
+  print "============ Waiting while plan2 is visualized (again)..."
+  rospy.sleep(5)
+
+  group.go(wait=True)
+
+  rospy.sleep(10)
+
+  #after pick up stop ur5
+  rospy.loginfo("Stowing ur5")
+  os.system('rosrun husky_control stow_ur5')
   
   ## Adding/Removing Objects and Attaching/Detaching Objects
   ## ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
