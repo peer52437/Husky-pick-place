@@ -42,3 +42,7 @@ https://youtu.be/sDt0YGg1weY
 
 This program with moveit was then used in the program of VeelWaypoints.py. So in this simulation the robot drives to the waypoints and simulates picking and placing an object. A video was also made of this simulation.
 https://youtu.be/95B99MdWNBs
+
+For a better simulation an object would have to be placed in gazebo. Then that object needs to get a frame in RViz.
+Then when the husky drives to this object it has to make a tf to the robot and send the arm to the location of the frame.
+This has not succeeded so far for two reasons. first, reading the quaternions and sending the arm there has proved difficult. And second creating a frame in RViz from an object in gazebo.
